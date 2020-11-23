@@ -38,7 +38,7 @@
             <ng-content select="adf-cloud-form-custom-outcomes"></ng-content>
             <ng-container *ngFor="let outcome of form.outcomes">
                 <button *ngIf="outcome.isVisible" [id]="'adf-form-'+ outcome.name  | formatSpace" [color]="getColorForOutcome(outcome.name)"
-                    mat-button [disabled]="!isOutcomeButtonEnabled(outcome)"
+                    mat-flat-button [disabled]="!isOutcomeButtonEnabled(outcome)"
                     [class.adf-form-hide-button]="!isOutcomeButtonVisible(outcome, form.readOnly)"
                     (click)="onOutcomeClicked(outcome)">
                     {{outcome.name | translate | uppercase }}

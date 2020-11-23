@@ -76,11 +76,11 @@
     </mat-card-content>
 
     <ng-template #taskFormCloudButtons>
-        <div fxLayout="row" fxLayoutAlign="end end">
-            <button mat-button (click)="cancelStartProcess()" id="cancel_process">
+        <div fxLayout="row" fxLayoutAlign="end end" class="adf-cloud-start-form-actions">
+            <button mat-flat-button (click)="cancelStartProcess()" id="cancel_process">
                 {{ 'ADF_CLOUD_PROCESS_LIST.ADF_CLOUD_START_PROCESS.FORM.ACTION.CANCEL' | translate | uppercase}}
             </button>
-            <button color="primary" mat-button [disabled]="disableStartButton || !isProcessFormValid()" (click)="startProcess()"
+            <button color="primary" mat-flat-button [disabled]="disableStartButton || !isProcessFormValid()" (click)="startProcess()"
                 data-automation-id="btn-start" id="button-start" class="btn-start">
                 {{'ADF_CLOUD_PROCESS_LIST.ADF_CLOUD_START_PROCESS.FORM.ACTION.START' | translate | uppercase}}
             </button>

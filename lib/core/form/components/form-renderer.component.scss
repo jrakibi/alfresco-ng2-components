@@ -1,7 +1,8 @@
 @import '~@angular/material/theming';
 
 @mixin adf-form-renderer-theme($theme) {
-
+    $primary: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
     $config: mat-typography-config();
     $warn: map-get($theme, warn);
     $accent: map-get($theme, accent);
@@ -106,16 +107,32 @@
             padding-bottom: 25px !important;
             padding-right: 25px !important;
 
-            & .mat-button {
+            & .mat-flat-button {
                 height: 36px;
                 border-radius: 5px;
+            }
 
+            & .mat-flat-button {
+                margin-right: 8px;
+                background-color: mat-color($mat-grey, A200);
+            }
+
+            & .mat-flat-button.mat-primary {
+                background-color: mat-color($primary);
+                line-height: 36px;
+                font-weight: bold;
+            }
+
+            & .mat-flat-button {
+                &[disabled] {
+                    background: mat-color($mat-grey, A200);
+                    color: mat-color($foreground, text, 0.54);
+                }
             }
 
             & .mat-button-wrapper {
                 width: 58px;
                 height: 20px;
-                opacity: 0.54;
                 font-size: mat-font-size($config, body-2);
                 font-weight: bold;
             }

@@ -91,7 +91,7 @@
         <mat-card-actions>
             <div class="adf-cloud-start-task-footer" fxLayout="row" fxLayoutAlign="end end">
                 <button
-                    mat-button
+                    mat-flat-button
                     type="button"
                     (click)="onCancel()"
                     id="button-cancel">
@@ -101,7 +101,7 @@
                     color="primary"
                     type="submit"
                     [disabled]="!canStartTask()"
-                    mat-button
+                    mat-flat-button
                     id="button-start">
                     {{'ADF_CLOUD_TASK_LIST.START_TASK.FORM.ACTION.START'|translate}}
                 </button>
