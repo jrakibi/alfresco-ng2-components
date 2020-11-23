@@ -59,6 +59,9 @@ export class UploadButtonComponent extends UploadBase implements OnInit, OnChang
     @Input()
     file: File;
 
+    @Input()
+    toolTipMessage: string;
+
     /** Emitted when create permission is missing. */
     @Output()
     permissionEvent: EventEmitter<PermissionModel> = new EventEmitter<PermissionModel>();
@@ -149,5 +152,13 @@ export class UploadButtonComponent extends UploadBase implements OnInit, OnChang
 
     nodeHasPermission(node: Node, permission: AllowableOperationsEnum | string): boolean {
         return this.contentService.hasAllowableOperations(node, permission);
+    }
+
+    getIcon() {
+        return !this.isButtonDisabled ? 'file_upload' : 'cloud_off';
+    }
+
+    getToolTipMessage() {
+        return !this.isButtonDisabled ? '' : 'User doesn\'t have permission to upload content to the folder';
     }
 }

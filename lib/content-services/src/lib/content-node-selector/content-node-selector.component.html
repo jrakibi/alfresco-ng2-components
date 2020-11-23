@@ -34,12 +34,13 @@
         <ng-container *ngIf="data?.showLocalUploadButton">
             <adf-upload-button
                 [staticTitle]="'FORM.FIELD.UPLOAD' | translate "
+                [toolTipMessage]="getWarning()"
                 [multipleFiles]="isMultipleSelection()"
                 [rootFolderId]="currentDirectoryId"
                 [disabled]="isNotAllowedToUpload()"
                 (error)="onError($event)">
             </adf-upload-button>
-            <ng-container>
+            <!-- <ng-container>
                 <div class="adf-content-node-upload-button-warning-message" *ngIf="showingSearch">
                     <mat-icon>warning</mat-icon>
                     <span>{{ 'NODE_SELECTOR.UPLOAD_BUTTON_SEARCH_WARNING_MESSAGE' | translate }}</span>
@@ -48,7 +49,7 @@
                     <mat-icon>warning</mat-icon>
                     <span>{{ 'NODE_SELECTOR.UPLOAD_BUTTON_PERMISSION_WARNING_MESSAGE' | translate }}</span>
                 </div>
-            </ng-container>
+            </ng-container> -->
         </ng-container>
     </div>
     <div>

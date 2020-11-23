@@ -107,4 +107,17 @@ export class ContentNodeSelectorComponent {
     onFolderLoaded() {
         this.isLoading = false;
     }
+
+    getWarning() {
+        let message: any;
+        if (this.showingSearch)  {
+            message = 'You can\'t upload a file whilst a search is still running';
+        }
+
+        if ((!this.hasAllowableOperations && !this.showingSearch) && !this.isLoading) {
+            message = 'User doesn\'t have permission to upload content to the folder';
+        }
+
+        return message;
+    }
 }

@@ -7,7 +7,9 @@
             [disabled]="isButtonDisabled()"
             mat-button
             (click)="uploadSingleFile.click()">
-            <mat-icon>file_upload</mat-icon>
+            <mat-icon [matTooltipDisabled]="!isButtonDisabled()"  [matTooltip]="toolTipMessage" [matTooltipPosition]="'right'">
+                {{ !isButtonDisabled() ? 'file_upload' : 'cloud_off' }}
+            </mat-icon>
             <span id="upload-single-file-label"
                 *ngIf="!staticTitle">{{ 'FILE_UPLOAD.BUTTON.UPLOAD_FILE' | translate }}</span>
             <span id="upload-single-file-label-static"
