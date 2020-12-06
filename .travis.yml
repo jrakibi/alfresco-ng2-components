@@ -28,6 +28,7 @@ branches:
   - /.*old-env.*/
   - /.*next-release.*/
   - /.*beta.*/
+  - dev-acs-936env2
 
 stages:
   - name: Lint & Build Dist & Release
